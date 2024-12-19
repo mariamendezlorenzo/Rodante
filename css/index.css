@@ -137,7 +137,7 @@ header {
 }
 
 .overlay {
-    background-color: #959595c9;
+    background-color: var(--main-color);
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -161,8 +161,8 @@ header {
 
 .popup__close {
     position: absolute;
-    top: 1em;
-    right: .5em;
+    top: -10em;
+    left: 10em;
     background: none;
     border: none;
 }
@@ -171,10 +171,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5em;
-    background-color: var(--gray-color);
-    border-radius: 10px;
-    box-shadow: 3px 3px 15px rgba(128, 128, 128, 0.923);
+    color: var(--white-color);
 }
 
 .popup__nav ul {
@@ -182,6 +179,15 @@ header {
     list-style: none;
     flex-direction: column;
     gap: 1em;
+}
+
+.popup__nav a {
+    font-size: 3em;
+}
+
+.popup__nav a:hover {
+    font-size: 2.9em;
+    color: var(--gray-color);
 }
 
 
@@ -241,7 +247,7 @@ header {
     padding: 5em;
     display: flex;
     flex-direction: row;
-    gap: 5em;
+    gap: 3em;
 }
 
 .banner__content {
@@ -306,7 +312,6 @@ header {
     flex-direction: column;
     gap: 1em;
 }
-
 .destination__card img {
     max-width: 100%;
     height: auto;
@@ -651,6 +656,54 @@ header {
 }
 
 
+/* Discount */
+
+.discount {
+    padding: 5em;
+}
+
+.discount__title {
+    padding: 0 0 2em 0;
+    max-width: 600px;
+}
+
+.discount__content {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2em;
+}
+
+.discount__card {
+    border: 1px solid var(--gray-color);
+    border-radius: 20px;
+    padding: 2em;
+}
+
+.card-title {
+    padding: 1em;
+}
+
+.card-aspects {
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1em;
+}
+
+.aspects {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.card-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 1em 0 1em;
+}
+
 
 
 /* Contacto */
@@ -715,14 +768,16 @@ form {
 }
 
 .form__column--checkbox {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: inline;
     background: none;
     color: var(--black-color);
     gap: .5em;
     font-size: .8rem;
+    color: var(--black-color);
+}
+
+.form__column--checkbox label {
+    display: flex;
 }
 
 input {
@@ -736,11 +791,6 @@ input {
 
 label {
     display: none;
-}
-
-#legal {
-    display: flex;
-    width: auto;
 }
 
 ::placeholder {
@@ -775,7 +825,7 @@ label {
 /* Footer */
 
 footer {
-    padding: 4em;
+    padding: 3em 1em;
 }
 
 .footer__block {
@@ -787,7 +837,7 @@ footer {
 
 .footer__ul {
     display: flex;
-    gap: 2.25em;
+    gap: 1em;
 }
 
 .footer__li {
@@ -852,6 +902,10 @@ footer {
         flex-direction: column;
     }
 
+    .discount__content {
+        grid-template-columns: repeat(1,1fr);
+    }
+
 }
 
 
@@ -887,9 +941,18 @@ footer {
         flex-direction: column;
         gap: 1em;
     }
+
+    .banner__block--offer {
+        flex-direction: column;
+    }
+
+    .booking__card {
+        flex-direction: column;
+    }
+
 }
 
-@media (max-width: 320px) {
+@media (max-width: 390px) {
 
     .header__logo {
         max-width: 200px;
@@ -916,5 +979,53 @@ footer {
     .footer__block {
         flex-direction: column;
         gap: 1em;
+    }
+
+    a.btn {
+        padding: 1em 2em;
+    }
+
+    .banner__block {
+        padding: 1em;
+    }
+
+    .banner__block--offer {
+        padding: 1em;
+    }
+
+    .destination {
+        padding: 3em 2em;
+    }
+
+    .offers {
+        padding: 3em 2em;
+    }
+
+    .contact {
+        padding: 3em 2em;
+    }
+    
+    .contact__block {
+        padding: 0;
+    }
+
+    .type-efect {
+        padding: 1em;
+    }
+
+    .trip {
+        padding: 3em 2em;
+    }
+
+    .discount {
+        padding: 3em 2em;
+    }
+
+    .discount__card {
+        max-width: 300px;
+    }
+
+    .card-aspects {
+        grid-template-columns: repeat(2,1fr);
     }
 }
